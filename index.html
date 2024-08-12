@@ -25,19 +25,20 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            animation: fadeInLeft 2s ease-out; /* Ajoute une animation au panneau gauche */
+            animation: fadeInLeft 2s ease-out;
         }
         .right-panel {
             flex: 1;
             background-image: url('https://cdn.midjourney.com/4cdf64aa-e9a3-4b96-a4e3-a849e16b0ade/0_2.png');
             background-size: cover;
             background-position: center;
-            animation: fadeInRight 2s ease-out; /* Ajoute une animation au panneau droit */
+            animation: fadeInRight 2s ease-out;
+            z-index: 1; /* Priorité d'affichage */
         }
         h1 {
             font-size: 4em;
             margin: 0;
-            animation: textPop 2s ease-in-out; /* Ajoute une animation au titre */
+            animation: textPop 2s ease-in-out;
         }
         .cyberpunk-text {
             font-size: 1.2em;
@@ -45,7 +46,7 @@
             margin-top: 20px;
             color: #00ffff;
             text-shadow: 0 0 10px #00ffff;
-            animation: textPop 3s ease-in-out; /* Ajoute une animation au texte */
+            animation: textPop 3s ease-in-out;
         }
         .footer {
             font-size: 0.8em;
@@ -95,5 +96,11 @@
                 <p class="cyberpunk-text">De la poussière aux sommets de Night City, l'humanité se réinvente. Dans ce labyrinthe de néons et d'acier, chaque rêve est un combat, chaque victoire un miracle éphémère.</p>
             </div>
             <div class="footer">KIROSHI CORP</div>
+        </div>
+        <div class="right-panel"></div>
+    </div>
+</body>
+</html>
+
        
 
