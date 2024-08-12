@@ -13,106 +13,75 @@ html
             font-family: 'Jost', sans-serif;
             background-color: #000;
             color: #fff;
-            height: 100vh;
-            overflow: hidden;
+            min-height: 100vh;
         }
         .container {
             display: flex;
-            height: 100vh;
+            flex-direction: column;
+            min-height: 100vh;
+            padding: 20px;
         }
-        .left-panel {
-            flex: 1;
-            padding: 60px;
+        .content {
+            flex-grow: 1;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-        }
-        .right-panel {
-            flex: 1;
-            background-image: url('https://raw.githubusercontent.com/masciz/design-ui/main/0_0.jpeg');
-            background-size: cover;
-            background-position: center;
-        }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 40px;
-        }
-        .logo {
-            font-size: 1.2em;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-        }
-        .nav {
-            display: flex;
-        }
-        .nav a {
-            color: #fff;
-            text-decoration: none;
-            margin-left: 20px;
-            font-size: 0.9em;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
+            justify-content: center;
         }
         h1 {
-            font-size: 5em;
+            font-size: 3em;
             font-weight: 700;
             letter-spacing: 0.2em;
             margin: 0 0 20px 0;
             text-transform: uppercase;
         }
         .cyberpunk-text {
-            font-size: 1.1em;
+            font-size: 1em;
             font-weight: 200;
-            max-width: 400px;
-            margin-top: 30px;
-            line-height: 1.8;
+            line-height: 1.6;
             letter-spacing: 0.05em;
-        }
-        .cta-button {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 10px 20px;
-            background-color: #00ffff;
-            color: #000;
-            text-decoration: none;
-            font-weight: 400;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-        }
-        .cta-button:hover {
-            background-color: #fff;
-            box-shadow: 0 0 15px #00ffff;
+            margin-bottom: 30px;
         }
         .footer {
             font-size: 0.8em;
             font-weight: 400;
             letter-spacing: 0.1em;
             text-transform: uppercase;
+            text-align: center;
+            padding: 20px 0;
+        }
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row;
+                padding: 0;
+            }
+            .content {
+                flex: 1;
+                padding: 60px;
+            }
+            .image-panel {
+                flex: 1;
+                background-image: url('https://raw.githubusercontent.com/masciz/design-ui/main/0_0.jpeg');
+                background-size: cover;
+                background-position: center;
+            }
+            h1 {
+                font-size: 5em;
+            }
+            .cyberpunk-text {
+                font-size: 1.1em;
+                max-width: 400px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="left-panel">
-            <div>
-                <header class="header">
-                    <div class="logo">KIROSHI CORP</div>
-                    <nav class="nav">
-                        <a href="#">Accueil</a>
-                        <a href="#">À propos</a>
-                        <a href="#">Contact</a>
-                    </nav>
-                </header>
-                <h1>PLAZA</h1>
-                <p class="cyberpunk-text">De la poussière aux sommets de Night City, l'humanité se réinvente. Dans ce labyrinthe de néons et d'acier, chaque rêve est un combat, chaque victoire un miracle éphémère.</p>
-                <a href="#" class="cta-button">Explorez Night City</a>
-            </div>
-            <div class="footer">© 2023 KIROSHI CORP - Tous droits réservés</div>
+        <div class="content">
+            <h1>PLAZA</h1>
+            <p class="cyberpunk-text">De la poussière aux sommets de Night City, l'humanité se réinvente. Dans ce labyrinthe de néons et d'acier, chaque rêve est un combat, chaque victoire un miracle éphémère.</p>
+            <div class="footer">KIROSHI CORP</div>
         </div>
-        <div class="right-panel"></div>
+        <div class="image-panel"></div>
     </div>
 </body>
 </html>
