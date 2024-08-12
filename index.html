@@ -1,4 +1,3 @@
-html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -12,58 +11,54 @@ html
             font-family: 'Arial', sans-serif;
             background-color: #000;
             color: #fff;
-            min-height: 100vh;
+            height: 100vh;
+            overflow: hidden;
         }
         .container {
-            min-height: 100vh;
-            padding: 20px;
-            box-sizing: border-box;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://raw.githubusercontent.com/masciz/design-ui/main/0_0.jpeg');
-            background-size: cover;
-            background-position: center;
+            display: flex;
+            height: 100vh;
+        }
+        .left-panel {
+            flex: 1;
+            padding: 40px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            background-color: #000; /* Assure que le fond soit noir */
+        }
+        .right-panel {
+            flex: 1;
+            background-image: url('https://cdn.midjourney.com/4cdf64aa-e9a3-4b96-a4e3-a849e16b0ade/0_2.png');
+            background-size: cover;
+            background-position: center;
         }
         h1 {
-            font-size: 3em;
+            font-size: 4em;
             margin: 0;
-            letter-spacing: 0.1em;
         }
         .cyberpunk-text {
-            font-size: 1em;
-            max-width: 100%;
+            font-size: 1.2em;
+            max-width: 400px;
             margin-top: 20px;
-            color: #fff;
-            text-shadow: 0 0 5px #00ffff;
+            color: #00ffff;
+            text-shadow: 0 0 10px #00ffff;
         }
         .footer {
             font-size: 0.8em;
-            color: #888;
-            text-align: center;
-            margin-top: 20px;
-        }
-        @media (min-width: 768px) {
-            .container {
-                padding: 40px;
-            }
-            h1 {
-                font-size: 4em;
-            }
-            .cyberpunk-text {
-                font-size: 1.2em;
-                max-width: 400px;
-            }
+            color: #555;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div>
-            <h1>PLAZA</h1>
-            <p class="cyberpunk-text">De la poussière aux sommets de Night City, l'humanité se réinvente. Dans ce labyrinthe de néons et d'acier, chaque rêve est un combat, chaque victoire un miracle éphémère.</p>
+        <div class="left-panel">
+            <div>
+                <h1>PLAZA</h1>
+                <p class="cyberpunk-text">De la poussière aux sommets de Night City, l'humanité se réinvente. Dans ce labyrinthe de néons et d'acier, chaque rêve est un combat, chaque victoire un miracle éphémère.</p>
+            </div>
+            <div class="footer">KIROSHI CORP</div>
         </div>
-        <div class="footer">KIROSHI CORP</div>
+        <div class="right-panel"></div>
     </div>
 </body>
 </html>
