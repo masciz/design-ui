@@ -20,21 +20,24 @@
         }
         .left-panel {
             flex: 1;
-            background-color: #1a1a1a; /* Adapte cette couleur à celle du fond de la photo */
-            padding-left: 60px; /* Décale le texte vers la droite */
+            background-color: #1a1a1a;
+            padding-left: 60px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            animation: fadeInLeft 2s ease-out; /* Ajoute une animation au panneau gauche */
         }
         .right-panel {
             flex: 1;
-            background-image: url('https://cdn.midjourney.com/4cdf64aa-e9a3-4b96-a4e3-a849e16b0ade/0_2.png');
+            background-image: url('chemin/vers/votre/image.jpg');
             background-size: cover;
             background-position: center;
+            animation: fadeInRight 2s ease-out; /* Ajoute une animation au panneau droit */
         }
         h1 {
             font-size: 4em;
             margin: 0;
+            animation: textPop 2s ease-in-out; /* Ajoute une animation au titre */
         }
         .cyberpunk-text {
             font-size: 1.2em;
@@ -42,10 +45,45 @@
             margin-top: 20px;
             color: #00ffff;
             text-shadow: 0 0 10px #00ffff;
+            animation: textPop 3s ease-in-out; /* Ajoute une animation au texte */
         }
         .footer {
             font-size: 0.8em;
             color: #555;
+        }
+
+        /* Définition des animations */
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes textPop {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
     </style>
 </head>
@@ -57,9 +95,5 @@
                 <p class="cyberpunk-text">De la poussière aux sommets de Night City, l'humanité se réinvente. Dans ce labyrinthe de néons et d'acier, chaque rêve est un combat, chaque victoire un miracle éphémère.</p>
             </div>
             <div class="footer">KIROSHI CORP</div>
-        </div>
-        <div class="right-panel"></div>
-    </div>
-</body>
-</html>
+       
 
