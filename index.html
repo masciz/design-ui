@@ -4,7 +4,7 @@ html
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PLAZA - THEUMMAN</title>
+    <title>PLAZA - Cyberpunk Design</title>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;400;700&display=swap" rel="stylesheet">
     <style>
         body, html {
@@ -29,15 +29,37 @@ html
         }
         .right-panel {
             flex: 1;
-            background-image: url('https://raw.githubusercontent.com/masciz/design-ui/main/0_0.jpeg');
+            background-image: url('https://source.unsplash.com/random/1200x900?cyberpunk');
             background-size: cover;
             background-position: center;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .logo {
+            font-size: 1.2em;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+        }
+        .nav {
+            display: flex;
+        }
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9em;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
         }
         h1 {
             font-size: 5em;
             font-weight: 700;
             letter-spacing: 0.2em;
-            margin: 0;
+            margin: 0 0 20px 0;
             text-transform: uppercase;
         }
         .cyberpunk-text {
@@ -47,6 +69,22 @@ html
             margin-top: 30px;
             line-height: 1.8;
             letter-spacing: 0.05em;
+        }
+        .cta-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #00ffff;
+            color: #000;
+            text-decoration: none;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #fff;
+            box-shadow: 0 0 15px #00ffff;
         }
         .footer {
             font-size: 0.8em;
@@ -60,10 +98,19 @@ html
     <div class="container">
         <div class="left-panel">
             <div>
+                <header class="header">
+                    <div class="logo">KIROSHI CORP</div>
+                    <nav class="nav">
+                        <a href="#">Accueil</a>
+                        <a href="#">À propos</a>
+                        <a href="#">Contact</a>
+                    </nav>
+                </header>
                 <h1>PLAZA</h1>
                 <p class="cyberpunk-text">De la poussière aux sommets de Night City, l'humanité se réinvente. Dans ce labyrinthe de néons et d'acier, chaque rêve est un combat, chaque victoire un miracle éphémère.</p>
+                <a href="#" class="cta-button">Explorez Night City</a>
             </div>
-            <div class="footer">KIROSHI CORP</div>
+            <div class="footer">© 2023 KIROSHI CORP - Tous droits réservés</div>
         </div>
         <div class="right-panel"></div>
     </div>
