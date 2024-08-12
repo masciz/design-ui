@@ -1,0 +1,75 @@
+
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THEUMMAN</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+        .container {
+            display: flex;
+            height: 100%;
+        }
+        .left-panel {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .right-panel {
+            flex: 1;
+            background-image: url('https://via.placeholder.com/500x500.png?text=Portrait');
+            background-size: cover;
+            background-position: center;
+        }
+        .vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+            padding: 20px;
+        }
+        .main-content {
+            text-align: left;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <div class="vertical-text">
+                A.LE.PAIN.SEC
+            </div>
+            <div class="main-content">
+                <h1>THEUMMAN</h1>
+                <p>Votre texte ici. Ajoutez une description ou des détails sur THEUMMAN.</p>
+            </div>
+            <div class="footer">
+                <span>FOOTER TEXTE</span>
+                <span>2023</span>
+            </div>
+        </div>
+        <div class="right-panel"></div>
+    </div>
+</body>
+</html>
+```
