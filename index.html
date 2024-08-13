@@ -1,130 +1,91 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projet Arasaka</title>
-    <!-- Import des nouvelles polices -->
-    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:wght@400&display=swap" rel="stylesheet">
-
     <style>
-        body,
-        html {
+        body {
             margin: 0;
             padding: 0;
-            font-family: 'Roboto', sans-serif; /* Police pour le texte */
-            background-color: rgb(5, 6, 6);
-            color: #fff;
+            font-family: 'Arial', sans-serif;
+            background: #111; /* Arrière-plan sombre pour un contraste avec le contenu */
+            color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             height: 100vh;
-            overflow: hidden;
-            position: relative;
         }
 
         .container {
-            padding: 40px;
             position: relative;
-            z-index: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            height: 100%;
+            width: 60%;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1); /* Légère transparence */
+            border-radius: 15px; /* Coins arrondis */
+            backdrop-filter: blur(10px); /* Effet de flou dynamique */
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         }
 
-        h1 {
-            font-size: 4em; /* Augmenté pour plus d'impact */
-            margin: 0;
-            font-family: 'Audiowide', sans-serif; /* Police pour "Projet Arasaka" */
-            color: #fff;
-            text-transform: uppercase; /* Donner un look plus cyberpunk */
+        .container h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #00c6ff, #0072ff); /* Dégradé sur le texte */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .cyberpunk-info {
-            font-family: 'Roboto', sans-serif; /* Nouvelle police pour le texte */
-            font-size: 1.1em; /* Taille ajustée */
-            max-width: 600px;
-            margin-top: 20px;
-            color: #fff;
-            line-height: 1.8; /* Hauteur de ligne augmentée pour meilleure lisibilité */
-            letter-spacing: 0.5px; /* Espacement des lettres pour aérer le texte */
-        }
-
-        .footer {
-            font-size: 0.8em;
-            color: #555;
-            text-align: left;
-        }
-
-        .image-right {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 50%;
-            height: 100%;
-            background-image: url('https://cdn.midjourney.com/24733000-540b-48fa-ae63-5549eb3e5c85/0_3.png');
-            background-size: cover;
-            background-position: center;
-            z-index: 0;
-        }
-
-        /* Styles pour le bouton */
-        .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 25px; /* Augmenté pour un meilleur confort visuel */
+        .container p {
             font-size: 1.2em;
-            color: #fff;
-            background-color: rgba(0, 0, 0, 0.6); /* Couleur assouplie pour se fondre */
-            border: none;
-            border-radius: 20px; /* Arrondi des coins pour un design plus doux */
+            margin-bottom: 10px;
+            color: #d1d1d1; /* Couleur du texte complémentaire */
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #ffffff;
+            background-color: #0072ff; /* Couleur complémentaire pour le bouton */
+            border-radius: 30px;
             text-decoration: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            transition: background 0.3s ease;
             text-align: center;
-            width: 180px; /* Largeur légèrement augmentée */
+            margin-top: 20px;
         }
 
-        .btn:hover {
-            background-color: rgba(0, 0, 0, 0.8); /* Couleur au survol */
-            transform: scale(1.05); /* Léger zoom au survol pour effet interactif */
+        .button:hover {
+            background-color: #00c6ff; /* Changement de couleur au survol */
         }
 
-        .frosted-glass {
-            position: absolute;
-            top: 10%;
-            left: 5%;
-            width: 40%;
-            padding: 25px; /* Ajustement de padding pour plus d'aération */
-            background: rgba(255, 255, 255, 0.25); /* Ajusté pour un effet de verre plus lumineux */
-            backdrop-filter: blur(20px); /* Plus de flou pour un effet plus clair */
-            -webkit-backdrop-filter: blur(20px);
-            border-radius: 30px; /* Angles plus arrondis */
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            z-index: 2;
+        /* Réajustement du cadre pour les petites tailles d'écran */
+        @media (max-width: 768px) {
+            .container {
+                width: 80%;
+                padding: 15px;
+            }
+
+            .container h1 {
+                font-size: 2em;
+            }
+
+            .button {
+                font-size: 0.9em;
+                padding: 8px 16px;
+            }
         }
     </style>
 </head>
-
 <body>
     <div class="container">
-        <div class="frosted-glass">
-            <h1>Projet Arasaka</h1>
-            <div class="cyberpunk-info">
-                <p>SUJET : MASCIZ</p>
-                <p>ID : 283739287A2</p>
-                <p>Temps d'apprentissage IA</p>
-                <p>15:37:00</p>
-                <p>Niveau de maîtrise</p>
-                <p>Sommaire</p>
-                <p>État des implants</p>
-                <p>Implants Kiroshi : <span class="status-off">Désactivés</span></p>
-                <p>Implants Militech : <span class="status-off">Désactivés</span></p>
-            </div>
-            <a href="https://example.com" class="btn">En savoir plus</a>
-        </div>
+        <h1>Projet Arasaka</h1>
+        <p>ID: 2837392877A2</p>
+        <p>Temps d'apprentissage IA: 15:37:40</p>
+        <p>Niveau de maîtrise: Avancé</p>
+        <p>État des implants: Inactifs</p>
+        <p>Implants Kiroshi: Désactivés</p>
+        <p>Implants Militech: Désactivés</p>
+        <a href="#" class="button">En savoir plus</a>
     </div>
-    <div class="image-right"></div> <!-- Image superposée à droite -->
-    <!-- Inclus ici ton fichier JS pour rendre le composant React -->
 </body>
-
 </html>
