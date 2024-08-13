@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projet Arasaka</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap">
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Orbitron', sans-serif;
             background: #111; /* Arrière-plan sombre pour un contraste avec le contenu */
-            color: #f0f0f0;
+            color: #000000; /* Texte en noir */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -21,39 +22,37 @@
         .container {
             position: relative;
             width: 60%;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1); /* Légère transparence */
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.8); /* Opacité élevée pour l'effet gelé */
             border-radius: 15px; /* Coins arrondis */
-            backdrop-filter: blur(10px); /* Effet de flou dynamique */
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(20px); /* Effet de flou dynamique accentué */
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
             text-align: left; /* Alignement du texte à gauche */
         }
 
         .container h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            background: linear-gradient(to right, #00c6ff, #0072ff); /* Dégradé sur le texte */
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 3em; /* Augmentation de la taille de police */
+            margin-bottom: 30px;
+            color: #000000; /* Couleur du texte en noir */
         }
 
         .container p {
-            font-size: 1.2em;
-            margin-bottom: 10px;
-            color: #d1d1d1; /* Couleur du texte complémentaire */
+            font-size: 1.5em; /* Taille de police plus grande */
+            margin-bottom: 15px;
+            color: #000000; /* Texte en noir */
         }
 
         .button {
             display: inline-block;
-            padding: 10px 20px;
-            font-size: 1em;
+            padding: 12px 24px;
+            font-size: 1.2em;
             color: #ffffff;
             background-color: #0072ff; /* Couleur complémentaire pour le bouton */
             border-radius: 30px;
             text-decoration: none;
             transition: background 0.3s ease;
             text-align: center;
-            margin-top: 20px;
+            margin-top: 30px;
         }
 
         .button:hover {
@@ -64,16 +63,20 @@
         @media (max-width: 768px) {
             .container {
                 width: 80%;
-                padding: 15px;
+                padding: 20px;
             }
 
             .container h1 {
-                font-size: 2em;
+                font-size: 2.5em;
+            }
+
+            .container p {
+                font-size: 1.3em;
             }
 
             .button {
-                font-size: 0.9em;
-                padding: 8px 16px;
+                font-size: 1em;
+                padding: 10px 20px;
             }
         }
     </style>
@@ -84,9 +87,6 @@
         <p>ID: 2837392877A2</p>
         <p>Temps d'apprentissage IA: 15:37:40</p>
         <p>Niveau de maîtrise: Avancé</p>
-        <p>État des implants: Inactifs</p>
-        <p>Implants Kiroshi: Désactivés</p>
-        <p>Implants Militech: Désactivés</p>
         <a href="#" class="button">En savoir plus</a>
     </div>
 </body>
