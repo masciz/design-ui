@@ -3,94 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PLAZA - THEUMMAN</title>
+    <title>Frosted Glass Effect</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap'); /* Police pour "PLAZA" */
-
         body, html {
             margin: 0;
             padding: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: rgb(5, 6, 6); /* Ajuster le fond à la couleur de l'image */
-            color: #fff; /* Texte en blanc */
             height: 100vh;
-            overflow: hidden;
-            position: relative; /* Nécessaire pour positionner l'image */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('https://cdn.midjourney.com/your-image-url-here.jpg') no-repeat center center/cover; /* Image de fond */
         }
 
-        .container {
-            padding: 40px;
-            text-align: center; /* Centrer le titre et le bouton */
-            position: relative;
-            z-index: 1; /* Assurer que le texte soit au-dessus de l'image */
-        }
-
-        h1 {
-            font-size: 4em;
-            margin: 0;
-            font-family: 'Raleway', sans-serif; /* Appliquer la police Raleway pour "PLAZA" */
-            color: #fff; /* Assurer que le titre est blanc */
-        }
-
-        .cyberpunk-text {
-            font-size: 1.2em;
-            max-width: 600px; /* Augmenter la largeur maximale du texte */
-            margin-top: 20px;
-            margin-left: auto;
-            margin-right: auto;
-            color: #fff; /* Texte en blanc */
-            line-height: 1.6; /* Augmenter l'interligne */
-        }
-
-        .footer {
-            font-size: 0.8em;
-            color: #555;
-            text-align: left; /* Le pied de page reste aligné à gauche */
-        }
-
-        .image-right {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 50%; /* Occupe la moitié droite de l'écran */
-            height: 100%;
-            background-image: url('https://cdn.midjourney.com/24733000-540b-48fa-ae63-5549eb3e5c85/0_3.png');
-            background-size: cover;
-            background-position: center;
-            z-index: 0; /* Image en arrière-plan */
-            opacity: 0.8; /* Légère transparence pour voir le fond noir */
-        }
-
-        /* Styles pour le bouton */
-        .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 1.2em;
-            color: #fff;
-            background-color: #00ffcc;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #00ccaa; /* Couleur au survol */
+        .frosted-glass {
+            width: 80%;
+            max-width: 800px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.1); /* Couche semi-transparente */
+            border-radius: 20px;
+            backdrop-filter: blur(10px); /* Effet de flou */
+            -webkit-backdrop-filter: blur(10px); /* Effet de flou pour Safari */
+            border: 1px solid rgba(255, 255, 255, 0.18); /* Bordure légère */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>PLAZA</h1>
-        <p class="cyberpunk-text">De la poussière aux sommets de Night City, l'humanité se réinvente. Dans ce labyrinthe de néons et d'acier, chaque rêve est un combat, chaque victoire un miracle éphémère.</p>
-        
-        <!-- Bouton cliquable -->
-        <a href="https://example.com" class="btn">En savoir plus</a>
-        
-        <div class="footer">KIROSHI CORP</div>
+    <div class="frosted-glass">
+        <h1>Effet Verre Givré</h1>
     </div>
-    <div class="image-right"></div> <!-- Image superposée à droite -->
 </body>
 </html>
