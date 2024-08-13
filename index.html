@@ -36,7 +36,7 @@
             color: #fff; /* Assurer que le titre est blanc */
         }
 
-        .cyberpunk-text {
+        .cyberpunk-text, .extension-text {
             font-size: 1.2em;
             max-width: 600px;
             margin-top: 20px;
@@ -45,10 +45,25 @@
             font-family: 'Poppins', sans-serif; /* Appliquer la police Poppins au texte */
         }
 
-        .footer {
-            font-size: 0.8em;
-            color: #555;
-            text-align: left; /* Le pied de page reste aligné à gauche */
+        .extension-text {
+            margin-top: 50px; /* Espacement conséquent entre les deux textes */
+        }
+
+        .frosted-glass {
+            position: absolute;
+            top: 10%;
+            left: 5%;
+            width: 40%;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1); /* Couche semi-transparente */
+            backdrop-filter: blur(20px); /* Effet de flou plus intense */
+            -webkit-backdrop-filter: blur(20px); /* Effet de flou plus intense pour Safari */
+            border-radius: 20px; /* Arrondir légèrement les coins pour un design plus soigné */
+            z-index: 2; /* Superposition au-dessus du fond et de l'image */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 80%; /* Long rectangle en hauteur */
         }
 
         .image-right {
@@ -67,46 +82,41 @@
         .btn {
             display: inline-block;
             margin-top: 20px;
-            padding: 10px 20px;
+            padding: 15px 25px;
             font-size: 1.2em;
             color: #fff;
-            background-color: #00ffcc;
+            background-color: #1db954;
             border: none;
-            border-radius: 5px;
+            border-radius: 30px;
             text-decoration: none;
             cursor: pointer;
             transition: background-color 0.3s ease;
             text-align: center;
-            width: 150px;
+            width: 200px;
         }
 
         .btn:hover {
-            background-color: #00ccaa; /* Couleur au survol */
-        }
-
-        .frosted-glass {
-            position: absolute;
-            top: 10%;
-            left: 5%;
-            width: 40%;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1); /* Couche semi-transparente */
-            backdrop-filter: blur(10px); /* Effet de flou */
-            -webkit-backdrop-filter: blur(10px); /* Effet de flou pour Safari */
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.2); /* Bordure légère */
-            z-index: 2; /* Superposition au-dessus du fond et de l'image */
+            background-color: #1aa34a; /* Couleur au survol */
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="frosted-glass">
-            <h1>Projet Arasaka</h1>
-            <p class="cyberpunk-text">
-                Tu le sens, pas vrai ? Ce frisson électrique qui parcourt ta colonne. Bienvenue dans ton terrain de jeu, gamin. De la crasse des bas-fonds aux néons aveuglants des gratte-ciel, c'est ta chance de te réinventer. Chaque ruelle de Night City est une opportunité, chaque deal un pas vers la gloire. Prêt à jouer ?
-            </p>
-            <a href="https://example.com" class="btn">En savoir plus</a>
+            <div>
+                <h1>Projet Arasaka</h1>
+                <p class="cyberpunk-text">
+                    De la poussière aux sommets de Night City, l'humanité se réinvente. Dans ce labyrinthe de néons et d'acier, chaque rêve est un combat, chaque victoire un miracle éphémère.
+                </p>
+            </div>
+            <div>
+                <p class="extension-text">
+                    Tu le sens, pas vrai ? Ce frisson électrique qui parcourt ta colonne. Bienvenue dans ton terrain de jeu, gamin. De la crasse des bas-fonds aux néons aveuglants des gratte-ciel, c'est ta chance de te réinventer. Chaque ruelle de Night City est une opportunité, chaque deal un pas vers la gloire. Prêt à jouer ?
+                </p>
+            </div>
+            <div>
+                <a href="https://example.com" class="btn">En savoir plus</a>
+            </div>
         </div>
     </div>
     <div class="image-right"></div> <!-- Image superposée à droite -->
