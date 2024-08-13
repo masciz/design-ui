@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projet Arasaka</title>
-    <!-- Import correct de la police Orbitron -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400&display=swap" rel="stylesheet">
+    <!-- Import des nouvelles polices -->
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:wght@400&display=swap" rel="stylesheet">
 
     <style>
         body,
         html {
             margin: 0;
             padding: 0;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Roboto', sans-serif; /* Police pour le texte */
             background-color: rgb(5, 6, 6);
             color: #fff;
             height: 100vh;
@@ -32,20 +32,21 @@
         }
 
         h1 {
-            font-size: 3.5em;
+            font-size: 4em; /* Augmenté pour plus d'impact */
             margin: 0;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 300;
+            font-family: 'Audiowide', sans-serif; /* Police pour "Projet Arasaka" */
             color: #fff;
+            text-transform: uppercase; /* Donner un look plus cyberpunk */
         }
 
         .cyberpunk-info {
-            font-family: 'Orbitron', sans-serif; /* Appliquer la police Orbitron */
-            font-size: 1.2em;
+            font-family: 'Roboto', sans-serif; /* Nouvelle police pour le texte */
+            font-size: 1.1em; /* Taille ajustée */
             max-width: 600px;
             margin-top: 20px;
             color: #fff;
-            line-height: 1.6;
+            line-height: 1.8; /* Hauteur de ligne augmentée pour meilleure lisibilité */
+            letter-spacing: 0.5px; /* Espacement des lettres pour aérer le texte */
         }
 
         .footer {
@@ -70,21 +71,22 @@
         .btn {
             display: inline-block;
             margin-top: 20px;
-            padding: 10px 20px;
+            padding: 12px 25px; /* Augmenté pour un meilleur confort visuel */
             font-size: 1.2em;
             color: #fff;
-            background-color: rgb(5, 6, 6); /* Même couleur que le fond */
+            background-color: rgba(0, 0, 0, 0.6); /* Couleur assouplie pour se fondre */
             border: none;
-            border-radius: 5px;
+            border-radius: 20px; /* Arrondi des coins pour un design plus doux */
             text-decoration: none;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease;
             text-align: center;
-            width: 150px;
+            width: 180px; /* Largeur légèrement augmentée */
         }
 
         .btn:hover {
-            background-color: #333; /* Couleur légèrement différente pour le survol */
+            background-color: rgba(0, 0, 0, 0.8); /* Couleur au survol */
+            transform: scale(1.05); /* Léger zoom au survol pour effet interactif */
         }
 
         .frosted-glass {
@@ -92,11 +94,11 @@
             top: 10%;
             left: 5%;
             width: 40%;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.3); /* Plus opaque */
-            backdrop-filter: blur(15px); /* Plus de flou pour un effet plus blanc */
-            -webkit-backdrop-filter: blur(15px);
-            border-radius: 25px; /* Angles plus arrondis */
+            padding: 25px; /* Ajustement de padding pour plus d'aération */
+            background: rgba(255, 255, 255, 0.25); /* Ajusté pour un effet de verre plus lumineux */
+            backdrop-filter: blur(20px); /* Plus de flou pour un effet plus clair */
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 30px; /* Angles plus arrondis */
             border: 1px solid rgba(255, 255, 255, 0.3);
             z-index: 2;
         }
