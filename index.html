@@ -3,56 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Effet Verre Givré Partiel</title>
+    <title>Projet Arasaka</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap'); /* Import de la police Poppins */
+
         body, html {
             margin: 0;
             padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: rgb(5, 6, 6); /* Fond noir */
+            color: #fff; /* Texte en blanc */
             height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #333; /* Couleur de fond général */
+            overflow: hidden;
+            position: relative; /* Nécessaire pour positionner l'image */
         }
 
         .container {
+            padding: 40px;
             position: relative;
-            width: 80%;
-            max-width: 1200px;
-            height: 600px;
-            background: url('https://via.placeholder.com/1200x600') no-repeat center center/cover; /* Image de fond général */
-            border-radius: 20px;
-            overflow: hidden;
+            z-index: 1; /* Assurer que le texte soit au-dessus de l'image */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin: 0;
+            font-family: 'Poppins', sans-serif; /* Appliquer la police Poppins pour "Projet Arasaka" */
+            font-weight: 300; /* Utilisation de la variante light */
+            color: #fff; /* Assurer que le titre est blanc */
+        }
+
+        .cyberpunk-text {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin-top: 20px;
+            color: #fff; /* Texte en blanc */
+            line-height: 1.6; /* Augmenter l'interligne */
+            font-family: 'Poppins', sans-serif; /* Appliquer la police Poppins au texte */
+        }
+
+        .footer {
+            font-size: 0.8em;
+            color: #555;
+            text-align: left; /* Le pied de page reste aligné à gauche */
+        }
+
+        .image-right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%; /* Occupe la moitié droite de l'écran */
+            height: 100%;
+            background-image: url('https://cdn.midjourney.com/24733000-540b-48fa-ae63-5549eb3e5c85/0_3.png');
+            background-size: cover;
+            background-position: center;
+            z-index: 0; /* Image en arrière-plan */
+        }
+
+        /* Styles pour le bouton */
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: #00ffcc;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            width: 150px;
+        }
+
+        .btn:hover {
+            background-color: #00ccaa; /* Couleur au survol */
         }
 
         .frosted-glass {
             position: absolute;
-            top: 20%;
-            left: 10%;
-            width: 300px;
-            height: 300px;
+            top: 10%;
+            left: 5%;
+            width: 40%;
+            padding: 20px;
             background: rgba(255, 255, 255, 0.1); /* Couche semi-transparente */
             backdrop-filter: blur(10px); /* Effet de flou */
             -webkit-backdrop-filter: blur(10px); /* Effet de flou pour Safari */
             border-radius: 15px;
             border: 1px solid rgba(255, 255, 255, 0.2); /* Bordure légère */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .frosted-glass img {
-            max-width: 80%;
-            border-radius: 10px; /* Arrondir les coins de l'image à l'intérieur */
+            z-index: 2; /* Superposition au-dessus du fond et de l'image */
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Petit conteneur avec effet de verre givré -->
         <div class="frosted-glass">
-            <img src="https://via.placeholder.com/250" alt="Image dans verre givré">
+            <h1>Projet Arasaka</h1>
+            <p class="cyberpunk-text">
+                Tu le sens, pas vrai ? Ce frisson électrique qui parcourt ta colonne. Bienvenue dans ton terrain de jeu, gamin. De la crasse des bas-fonds aux néons aveuglants des gratte-ciel, c'est ta chance de te réinventer. Chaque ruelle de Night City est une opportunité, chaque deal un pas vers la gloire. Prêt à jouer ?
+            </p>
+            <a href="https://example.com" class="btn">En savoir plus</a>
         </div>
     </div>
+    <div class="image-right"></div> <!-- Image superposée à droite -->
 </body>
 </html>
