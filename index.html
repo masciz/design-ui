@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projet Arasaka</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap'); /* Import de la police Poppins */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
-        body, html {
+        body,
+        html {
             margin: 0;
             padding: 0;
             font-family: 'Poppins', sans-serif;
-            background-color: rgb(5, 6, 6); /* Fond noir */
-            color: #fff; /* Texte en blanc */
+            background-color: rgb(5, 6, 6);
+            color: #fff;
             height: 100vh;
             overflow: hidden;
-            position: relative; /* Nécessaire pour positionner l'image */
+            position: relative;
         }
 
         .container {
             padding: 40px;
             position: relative;
-            z-index: 1; /* Assurer que le texte soit au-dessus de l'image */
+            z-index: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -31,22 +33,57 @@
         h1 {
             font-size: 3.5em;
             margin: 0;
-            font-family: 'Poppins', sans-serif; /* Appliquer la police Poppins pour "Projet Arasaka" */
-            font-weight: 300; /* Utilisation de la variante light */
-            color: #fff; /* Assurer que le titre est blanc */
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+            color: #fff;
         }
 
-        .cyberpunk-text, .extension-text {
+        .cyberpunk-text {
             font-size: 1.2em;
             max-width: 600px;
             margin-top: 20px;
-            color: #fff; /* Texte en blanc */
-            line-height: 1.6; /* Augmenter l'interligne */
-            font-family: 'Poppins', sans-serif; /* Appliquer la police Poppins au texte */
+            color: #fff;
+            line-height: 1.6;
+            font-family: 'Poppins', sans-serif;
         }
 
-        .extension-text {
-            margin-top: 50px; /* Espacement conséquent entre les deux textes */
+        .footer {
+            font-size: 0.8em;
+            color: #555;
+            text-align: left;
+        }
+
+        .image-right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background-image: url('https://cdn.midjourney.com/24733000-540b-48fa-ae63-5549eb3e5c85/0_3.png');
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+
+        /* Styles pour le bouton */
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: rgb(5, 6, 6); /* Même couleur que le fond */
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            width: 150px;
+        }
+
+        .btn:hover {
+            background-color: #333; /* Couleur légèrement différente pour le survol */
         }
 
         .frosted-glass {
@@ -54,71 +91,31 @@
             top: 10%;
             left: 5%;
             width: 40%;
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.1); /* Couche semi-transparente */
-            backdrop-filter: blur(20px); /* Effet de flou plus intense */
-            -webkit-backdrop-filter: blur(20px); /* Effet de flou plus intense pour Safari */
-            border-radius: 20px; /* Arrondir légèrement les coins pour un design plus soigné */
-            z-index: 2; /* Superposition au-dessus du fond et de l'image */
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 80%; /* Long rectangle en hauteur */
-        }
-
-        .image-right {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 50%; /* Occupe la moitié droite de l'écran */
-            height: 100%;
-            background-image: url('https://cdn.midjourney.com/24733000-540b-48fa-ae63-5549eb3e5c85/0_3.png');
-            background-size: cover;
-            background-position: center;
-            z-index: 0; /* Image en arrière-plan */
-        }
-
-        /* Styles pour le bouton */
-        .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 15px 25px;
-            font-size: 1.2em;
-            color: #fff;
-            background-color: #1db954;
-            border: none;
-            border-radius: 30px;
-            text-decoration: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            text-align: center;
-            width: 200px;
-        }
-
-        .btn:hover {
-            background-color: #1aa34a; /* Couleur au survol */
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.3); /* Plus opaque */
+            backdrop-filter: blur(15px); /* Plus de flou pour un effet plus blanc */
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 25px; /* Angles plus arrondis */
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            z-index: 2;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="frosted-glass">
-            <div>
-                <h1>Projet Arasaka</h1>
-                <p class="cyberpunk-text">
-                    De la poussière aux sommets de Night City, l'humanité se réinvente. Dans ce labyrinthe de néons et d'acier, chaque rêve est un combat, chaque victoire un miracle éphémère.
-                </p>
-            </div>
-            <div>
-                <p class="extension-text">
-                    Tu le sens, pas vrai ? Ce frisson électrique qui parcourt ta colonne. Bienvenue dans ton terrain de jeu, gamin. De la crasse des bas-fonds aux néons aveuglants des gratte-ciel, c'est ta chance de te réinventer. Chaque ruelle de Night City est une opportunité, chaque deal un pas vers la gloire. Prêt à jouer ?
-                </p>
-            </div>
-            <div>
-                <a href="https://example.com" class="btn">En savoir plus</a>
-            </div>
+            <h1>Projet Arasaka</h1>
+            <p class="cyberpunk-text">
+                De la poussière aux sommets de Night City, l'humanité se réinvente. Dans ce labyrinthe de néons et d'acier,
+                chaque rêve est un combat, chaque victoire un miracle éphémère.
+            </p>
+            <div id="react-render"></div> <!-- Conteneur pour le rendu React -->
+            <a href="https://example.com" class="btn">En savoir plus</a>
         </div>
     </div>
     <div class="image-right"></div> <!-- Image superposée à droite -->
+    <!-- Inclus ici ton fichier JS pour rendre le composant React -->
 </body>
+
 </html>
