@@ -5,62 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PLAZA - THEUMMAN</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap'); /* Police pour "PLAZA" /
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap'); /* Police pour "PLAZA" */
+
         body, html {
             margin: 0;
             padding: 0;
             font-family: 'Arial', sans-serif;
-            background-color: #000; / Garder le fond noir /
-            color: #fff; / Assurer que tout le texte soit en blanc /
+            background-color: #000; /* Fond noir */
+            color: #fff; /* Texte en blanc */
             height: 100vh;
             overflow: hidden;
+            position: relative; /* Nécessaire pour positionner l'image */
         }
+
         .container {
-            display: flex;
-            height: 100vh;
-        }
-        .left-panel {
-            flex: 1;
             padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            background-color: #000; / Fond noir pour correspondre à l'ensemble /
+            text-align: left;
+            position: relative;
+            z-index: 1; /* Assurer que le texte soit au-dessus de l'image */
         }
-        .right-panel {
-            flex: 1;
-            background-image: url('https://cdn.midjourney.com/24733000-540b-48fa-ae63-5549eb3e5c85/0_3.png'); / Garder l'image de droite /
-            background-size: cover;
-            background-position: center;
-        }
+
         h1 {
             font-size: 4em;
             margin: 0;
-            font-family: 'Raleway', sans-serif; / Appliquer la police Raleway pour "PLAZA" /
-            color: #fff; / Assurer que le titre est blanc /
+            font-family: 'Raleway', sans-serif; /* Appliquer la police Raleway pour "PLAZA" */
+            color: #fff; /* Assurer que le titre est blanc */
         }
+
         .cyberpunk-text {
             font-size: 1.2em;
             max-width: 400px;
             margin-top: 20px;
-            color: #fff; / Changer le texte bleu en blanc */
+            color: #fff; /* Texte en blanc */
         }
+
         .footer {
             font-size: 0.8em;
             color: #555;
+        }
+
+        .image-right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%; /* Occupe la moitié droite de l'écran */
+            height: 100%;
+            background-image: url('https://cdn.midjourney.com/24733000-540b-48fa-ae63-5549eb3e5c85/0_3.png');
+            background-size: cover;
+            background-position: center;
+            z-index: 0; /* Image en arrière-plan */
+            opacity: 0.8; /* Légère transparence pour voir le fond noir */
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="left-panel">
-            <div>
-                <h1>PLAZA</h1>
-                <p class="cyberpunk-text">De la poussière aux sommets de Night City, l'humanité se réinvente. Dans ce labyrinthe de néons et d'acier, chaque rêve est un combat, chaque victoire un miracle éphémère.</p>
-            </div>
-            <div class="footer">KIROSHI CORP</div>
-        </div>
-        <div class="right-panel"></div>
+        <h1>PLAZA</h1>
+        <p class="cyberpunk-text">De la poussière aux sommets de Night City, l'humanité se réinvente. Dans ce labyrinthe de néons et d'acier, chaque rêve est un combat, chaque victoire un miracle éphémère.</p>
+        <div class="footer">KIROSHI CORP</div>
     </div>
+    <div class="image-right"></div> <!-- Image superposée à droite -->
 </body>
 </html>
