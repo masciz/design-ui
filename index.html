@@ -5,113 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PLAZA - THEUMMAN</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap');
-
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap'); /* Police pour "PLAZA" /
         body, html {
             margin: 0;
             padding: 0;
             font-family: 'Arial', sans-serif;
-            background-color: #000;
-            color: #fff;
+            background-color: #000; / Garder le fond noir /
+            color: #fff; / Assurer que tout le texte soit en blanc /
             height: 100vh;
             overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
         .container {
-            text-align: center;
-            color: #fff; /* Texte en blanc */
+            display: flex;
+            height: 100vh;
+        }
+        .left-panel {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: #000; / Fond noir pour correspondre à l'ensemble /
+        }
+        .right-panel {
+            flex: 1;
+            background-image: url('https://cdn.midjourney.com/24733000-540b-48fa-ae63-5549eb3e5c85/0_3.png'); / Garder l'image de droite /
+            background-size: cover;
+            background-position: center;
         }
         h1 {
             font-size: 4em;
             margin: 0;
-            font-family: 'Raleway', sans-serif; /* Police d'écriture design pour "PLAZA" */
+            font-family: 'Raleway', sans-serif; / Appliquer la police Raleway pour "PLAZA" /
+            color: #fff; / Assurer que le titre est blanc /
         }
         .cyberpunk-text {
             font-size: 1.2em;
-            max-width: 600px;
+            max-width: 400px;
             margin-top: 20px;
-            margin-left: auto;
-            margin-right: auto;
-            color: #fff; /* Texte en blanc */
+            color: #fff; / Changer le texte bleu en blanc */
         }
         .footer {
             font-size: 0.8em;
             color: #555;
-            margin-top: 40px;
-        }
-
-        /* Animation Design d'un Objet */
-        .animation-container {
-            width: 100px;
-            height: 100px;
-            margin-top: 40px;
-            background-color: #00ffff;
-            animation: morph 3s infinite;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        @keyframes morph {
-            0% {
-                border-radius: 50%;
-                transform: scale(1);
-            }
-            50% {
-                border-radius: 0;
-                transform: scale(1.5);
-            }
-            100% {
-                border-radius: 50%;
-                transform: scale(1);
-            }
-        }
-
-        /* Définition des animations */
-        @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-100%);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(100%);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes textPop {
-            from {
-                opacity: 0;
-                transform: scale(0.5);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>PLAZA</h1>
-        <p class="cyberpunk-text">De la poussière aux sommets de Night City, l'humanité se réinvente. Dans ce labyrinthe de néons et d'acier, chaque rêve est un combat, chaque victoire un miracle éphémère.</p>
-        <div class="animation-container"></div> <!-- Conteneur de l'animation -->
-        <div class="footer">KIROSHI CORP</div>
+        <div class="left-panel">
+            <div>
+                <h1>PLAZA</h1>
+                <p class="cyberpunk-text">De la poussière aux sommets de Night City, l'humanité se réinvente. Dans ce labyrinthe de néons et d'acier, chaque rêve est un combat, chaque victoire un miracle éphémère.</p>
+            </div>
+            <div class="footer">KIROSHI CORP</div>
+        </div>
+        <div class="right-panel"></div>
     </div>
 </body>
 </html>
-
-       
-
