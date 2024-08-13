@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projet Arasaka</title>
-    <style>
-        @import url('<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400&display=swap" rel="stylesheet">
-');
+    <!-- Import correct de la police Orbitron -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400&display=swap" rel="stylesheet">
 
+    <style>
         body,
         html {
             margin: 0;
@@ -39,13 +39,13 @@
             color: #fff;
         }
 
-        .cyberpunk-text {
+        .cyberpunk-info {
+            font-family: 'Orbitron', sans-serif; /* Appliquer la police Orbitron */
             font-size: 1.2em;
             max-width: 600px;
             margin-top: 20px;
             color: #fff;
             line-height: 1.6;
-            font-family: 'Poppins', sans-serif;
         }
 
         .footer {
@@ -107,21 +107,17 @@
     <div class="container">
         <div class="frosted-glass">
             <h1>Projet Arasaka</h1>
-             <div class="cyberpunk-info">
-        <p>SUJET : MASCIZ</p>
-        <p>ID : 283739287A2</p>
-        <p>Temps d'apprentissage IA</p>
-        <p>15:37:00</p>
-        <p>Niveau de maîtrise</p>
-        <p>Sommaire</p>
-        <p>État des implants</p>
-        <p>Implants Kiroshi : <span class="status-off">Désactivés</span></p>
-        <p>Implants Militech : <span class="status-off">Désactivés</span></p>
-    </div>
-    <a href="https://example.com" class="btn">En savoir plus</a>
-</div>
-            </p>
-            <div id="react-render"></div> <!-- Conteneur pour le rendu React -->
+            <div class="cyberpunk-info">
+                <p>SUJET : MASCIZ</p>
+                <p>ID : 283739287A2</p>
+                <p>Temps d'apprentissage IA</p>
+                <p>15:37:00</p>
+                <p>Niveau de maîtrise</p>
+                <p>Sommaire</p>
+                <p>État des implants</p>
+                <p>Implants Kiroshi : <span class="status-off">Désactivés</span></p>
+                <p>Implants Militech : <span class="status-off">Désactivés</span></p>
+            </div>
             <a href="https://example.com" class="btn">En savoir plus</a>
         </div>
     </div>
