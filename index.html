@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PLAZA - THEUMMAN</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap');
+
         body, html {
             margin: 0;
             padding: 0;
@@ -13,44 +15,57 @@
             color: #fff;
             height: 100vh;
             overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .container {
-            display: flex;
-            height: 100vh;
-        }
-        .left-panel {
-            flex: 1;
-            background-color: #1a1a1a;
-            padding-left: 60px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            animation: fadeInLeft 2s ease-out;
-        }
-        .right-panel {
-            flex: 1;
-            background-image: url('https://cdn.midjourney.com/24733000-540b-48fa-ae63-5549eb3e5c85/0_3.png');
-            background-size: cover;
-            background-position: center;
-            animation: fadeInRight 2s ease-out;
-            z-index: 1; /* Priorité d'affichage */
+            text-align: center;
+            color: #fff; /* Texte en blanc */
         }
         h1 {
             font-size: 4em;
             margin: 0;
-            animation: textPop 2s ease-in-out;
+            font-family: 'Raleway', sans-serif; /* Police d'écriture design pour "PLAZA" */
         }
         .cyberpunk-text {
             font-size: 1.2em;
-            max-width: 400px;
+            max-width: 600px;
             margin-top: 20px;
-            color: #00ffff;
-            text-shadow: 0 0 10px #00ffff;
-            animation: textPop 3s ease-in-out;
+            margin-left: auto;
+            margin-right: auto;
+            color: #fff; /* Texte en blanc */
         }
         .footer {
             font-size: 0.8em;
             color: #555;
+            margin-top: 40px;
+        }
+
+        /* Animation Design d'un Objet */
+        .animation-container {
+            width: 100px;
+            height: 100px;
+            margin-top: 40px;
+            background-color: #00ffff;
+            animation: morph 3s infinite;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @keyframes morph {
+            0% {
+                border-radius: 50%;
+                transform: scale(1);
+            }
+            50% {
+                border-radius: 0;
+                transform: scale(1.5);
+            }
+            100% {
+                border-radius: 50%;
+                transform: scale(1);
+            }
         }
 
         /* Définition des animations */
@@ -90,14 +105,10 @@
 </head>
 <body>
     <div class="container">
-        <div class="left-panel">
-            <div>
-                <h1>PLAZA</h1>
-                <p class="cyberpunk-text">De la poussière aux sommets de Night City, l'humanité se réinvente. Dans ce labyrinthe de néons et d'acier, chaque rêve est un combat, chaque victoire un miracle éphémère.</p>
-            </div>
-            <div class="footer">KIROSHI CORP</div>
-        </div>
-        <div class="right-panel"></div>
+        <h1>PLAZA</h1>
+        <p class="cyberpunk-text">De la poussière aux sommets de Night City, l'humanité se réinvente. Dans ce labyrinthe de néons et d'acier, chaque rêve est un combat, chaque victoire un miracle éphémère.</p>
+        <div class="animation-container"></div> <!-- Conteneur de l'animation -->
+        <div class="footer">KIROSHI CORP</div>
     </div>
 </body>
 </html>
