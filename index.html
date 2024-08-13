@@ -20,7 +20,7 @@
 
         .container {
             padding: 40px;
-            text-align: left;
+            text-align: center; /* Centrer le titre et le bouton */
             position: relative;
             z-index: 1; /* Assurer que le texte soit au-dessus de l'image */
         }
@@ -34,14 +34,18 @@
 
         .cyberpunk-text {
             font-size: 1.2em;
-            max-width: 400px;
+            max-width: 600px; /* Augmenter la largeur maximale du texte */
             margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
             color: #fff; /* Texte en blanc */
+            line-height: 1.6; /* Augmenter l'interligne */
         }
 
         .footer {
             font-size: 0.8em;
             color: #555;
+            text-align: left; /* Le pied de page reste aligné à gauche */
         }
 
         .image-right {
@@ -56,12 +60,35 @@
             z-index: 0; /* Image en arrière-plan */
             opacity: 0.8; /* Légère transparence pour voir le fond noir */
         }
+
+        /* Styles pour le bouton */
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: #00ffcc;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #00ccaa; /* Couleur au survol */
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>PLAZA</h1>
         <p class="cyberpunk-text">De la poussière aux sommets de Night City, l'humanité se réinvente. Dans ce labyrinthe de néons et d'acier, chaque rêve est un combat, chaque victoire un miracle éphémère.</p>
+        
+        <!-- Bouton cliquable -->
+        <a href="https://example.com" class="btn">En savoir plus</a>
+        
         <div class="footer">KIROSHI CORP</div>
     </div>
     <div class="image-right"></div> <!-- Image superposée à droite -->
