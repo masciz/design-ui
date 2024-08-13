@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frosted Glass Effect</title>
+    <title>Effet Verre Givré Partiel</title>
     <style>
         body, html {
             margin: 0;
@@ -12,30 +12,47 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: url('https://via.placeholder.com/800x450') no-repeat center center/cover; /* Image de fond de test */
+            background-color: #333; /* Couleur de fond général */
+        }
+
+        .container {
+            position: relative;
+            width: 80%;
+            max-width: 1200px;
+            height: 600px;
+            background: url('https://via.placeholder.com/1200x600') no-repeat center center/cover; /* Image de fond général */
+            border-radius: 20px;
+            overflow: hidden;
         }
 
         .frosted-glass {
-            width: 80%;
-            max-width: 800px;
-            height: 400px;
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            width: 300px;
+            height: 300px;
             background: rgba(255, 255, 255, 0.1); /* Couche semi-transparente */
-            border-radius: 20px;
             backdrop-filter: blur(10px); /* Effet de flou */
             -webkit-backdrop-filter: blur(10px); /* Effet de flou pour Safari */
-            border: 1px solid rgba(255, 255, 255, 0.18); /* Bordure légère */
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2); /* Bordure légère */
             display: flex;
             justify-content: center;
             align-items: center;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
+        }
+
+        .frosted-glass img {
+            max-width: 80%;
+            border-radius: 10px; /* Arrondir les coins de l'image à l'intérieur */
         }
     </style>
 </head>
 <body>
-    <div class="frosted-glass">
-        <h1>Effet Verre Givré</h1>
+    <div class="container">
+        <!-- Petit conteneur avec effet de verre givré -->
+        <div class="frosted-glass">
+            <img src="https://via.placeholder.com/250" alt="Image dans verre givré">
+        </div>
     </div>
 </body>
 </html>
