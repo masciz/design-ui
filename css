@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000; /* Fond noir en cas de problème de chargement de la vidéo */
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.content {
+    text-align: left;
+    color: #ffffff;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.5); /* Fond noir semi-transparent */
+    border-radius: 10px; /* Coins arrondis pour un effet design */
+    backdrop-filter: blur(5px); /* Effet gelé */
+    max-width: 600px;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    color: #ffffff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .content {
+        padding: 20px;
+    }
+}
