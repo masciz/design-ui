@@ -109,6 +109,40 @@
                 transform: skew(0.4deg);
             }
         }
+
+        .container {
+            position: relative;
+            width: 90vw;
+            height: 90vh;
+            background-color: transparent;
+            border: 1px solid transparent;
+            z-index: 2;
+        }
+
+        .point {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: rgba(200, 200, 200, 0.5); /* Gris clair avec opacité */
+            backdrop-filter: blur(10px); /* Effet frosted */
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2); /* Doux halo autour du point */
+        }
+
+        #point1 {
+            top: 22%;
+            left: 15%;
+        }
+
+        #point2 {
+            top: 5%;
+            right: -25%;
+        }
+
+        #point3 {
+            bottom: 10%;
+            right: -15%;
+        }
     </style>
 </head>
 <body>
@@ -117,6 +151,13 @@
             <source src="https://storage.cdn-luma.com/dream_machine/978beabf-1f02-4a94-b5c9-52c91e2f5081/watermarked_video01368f763a5704cec92385d7576057f47.mp4" type="video/mp4">
         </video>
     </div>
+
+    <div class="container">
+        <div id="point1" class="point"></div>
+        <div id="point2" class="point"></div>
+        <div id="point3" class="point"></div>
+    </div>
+
     <div class="content">
         projet/arasaka/corp.ciz
     </div>
