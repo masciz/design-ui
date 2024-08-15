@@ -1,0 +1,4 @@
+<video autoplay muted loop>
+    <source src="https://raw.githubusercontent.com/YourUsername/YourRepository/main/videos/yourvideo.mp4" type="video/mp4">
+    Votre navigateur ne supporte pas la vidéo HTML5.
+</video>
