@@ -1,188 +1,3 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projet Arasaka</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Roboto Mono', sans-serif;
-            height: 100vh;
-            overflow: hidden;
-            display: flex;
-            justify-content: flex-start;
-            align-items: flex-end;
-            background-color: #000;
-        }
-
-        .video-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        .video-background video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
-
-        .content {
-            position: absolute;
-            bottom: 10px;
-            left: -1075px;
-            font-size: 1em;
-            letter-spacing: 0.31em;
-            background: linear-gradient(90deg, #cccccc, #666666);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            z-index: 1;
-            padding: 5px 10px;
-            border-radius: 5px;
-            position: relative;
-        }
-
-        .content::before {
-            content: "projet/arasaka/corp.ciz";
-            position: absolute;
-            left: 2px;
-            text-shadow: -2px 0 red;
-            background: rgba(255, 255, 255, 0.2);
-            clip: rect(2px, 150px, 25px, 0);
-            animation: glitch 1.5s infinite linear alternate-reverse;
-        }
-
-        @keyframes glitch {
-            0% {
-                clip: rect(42px, 550px, 44px, 0);
-                transform: skew(0.3deg);
-            }
-            10% {
-                clip: rect(10px, 550px, 90px, 0);
-                transform: skew(0.5deg);
-            }
-            20% {
-                clip: rect(85px, 550px, 140px, 0);
-                transform: skew(0.2deg);
-            }
-            30% {
-                clip: rect(42px, 550px, 50px, 0);
-                transform: skew(0.4deg);
-            }
-            40% {
-                clip: rect(20px, 550px, 130px, 0);
-                transform: skew(0.6deg);
-            }
-            50% {
-                clip: rect(62px, 550px, 140px, 0);
-                transform: skew(0.5deg);
-            }
-            60% {
-                clip: rect(80px, 550px, 100px, 0);
-                transform: skew(0.3deg);
-            70% {
-                clip: rect(50px, 550px, 80px, 0);
-                transform: skew(0.4deg);
-            }
-            80% {
-                clip: rect(60px, 550px, 120px, 0);
-                transform: skew(0.5deg);
-            }
-            90% {
-                clip: rect(70px, 550px, 90px, 0);
-                transform: skew(0.3deg);
-            }
-            100% {
-                clip: rect(30px, 550px, 110px, 0);
-                transform: skew(0.4deg);
-            }
-        }
-
-        .container {
-            position: relative;
-            width: 90vw;
-            height: 90vh;
-            background-color: transparent;
-            border: 1px solid transparent;
-            z-index: 2;
-        }
-
-        .point {
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            background: rgba(200, 200, 200, 0.3);
-            backdrop-filter: blur(10px);
-            border-radius: 50%;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-            animation: pulse 4s infinite;
-        }
-
-        #point1 {
-            top: 22%;
-            left: 15%;
-        }
-
-        #point2 {
-            top: 12%;
-            right: -10%;
-        }
-
-        #point3 {
-            bottom: 20%;
-            right: -15%;
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.2);
-                box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        .line1, .line2, .line3 {
-            position: absolute;
-            background-color: rgba(200, 200, 200, 0.8);
-            z-index: 1;
-        }
-
-        /* Ligne connectrice pour le point 1 (vers l'oeil) */
-        .line1-segment1 {
-            top: 7%;
-            left: 20%;
-            width: 22%;
-            height: 2px;
-        }
-
-        .line1-segment2 {
-            top: 21%;
-            left: 19%;
-            width: 2px;
-            height: 8%;
-        }
-
-        /* Ligne connectrice pour le point 2 (vers l'oreille) */
-        .line2-segment1 {
-            top: 2%;
-            right:-3.5%;
-            width: 18%;
             height: 2px;
         }
 
@@ -190,13 +5,13 @@
             top: 11%;
             right: -6.5%;
             width: 2px;
-            height: 8%;
+            height: 5%;
         }
 
         /* Ligne connectrice pour le point 3 (vers le bas du crâne) */
         .line3-segment1 {
             bottom: 18%;
-            right: -8%;
+            right: -10%;
             width: 18%;
             height: 2px;
         }
@@ -212,8 +27,7 @@
 <body>
     <div class="video-background">
         <video autoplay muted loop>
-            <source src="https://drive.google.com/uc?export=download&id=194F4Q9VJaQ781WqwAQVtCPW6NWWsnzpp" type="video/mp4">
-            Votre navigateur ne supporte pas la vidéo HTML5.
+            <source src="https://storage.cdn-luma.com/dream_machine/978beabf-1f02-4a94-b5c9-52c91e2f5081/watermarked_video01368f763a5704cec92385d7576057f47.mp4" type="video/mp4">
         </video>
     </div>
 
@@ -226,13 +40,7 @@
         <div class="line2-segment1 line2"></div>
         <div class="line2-segment2 line2"></div>
 
-        <div id="point3" class=" point"></div>
+        <div id="point3" class="point"></div>
         <div class="line3-segment1 line3"></div>
         <div class="line3-segment2 line3"></div>
     </div>
-
-    <div class="content">
-        projet/arasaka/corp.ciz
-    </div>
-</body>
-</html>
