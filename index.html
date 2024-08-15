@@ -1,46 +1,38 @@
-            height: 2px;
+            z-index: 2;
         }
 
-        .line2-segment2 {
-            top: 11%;
-            right: -6.5%;
-            width: 2px;
-            height: 5%;
+        .point {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: rgba(200, 200, 200, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            animation: pulse 4s infinite;
         }
 
-        /* Ligne connectrice pour le point 3 (vers le bas du crâne) */
-        .line3-segment1 {
-            bottom: 18%;
+        #point1 {
+            top: 22%;
+            left: 15%;
+        }
+
+        #point2 {
+            top: 12%;
             right: -10%;
-            width: 18%;
-            height: 2px;
         }
 
-        .line3-segment2 {
-            bottom: 19.5%;
-            right:-11.5%;
-            width: 2px;
-            height: 6%;
+        #point3 {
+            bottom: 20%;
+            right: -15%;
         }
-    </style>
-</head>
-<body>
-    <div class="video-background">
-        <video autoplay muted loop>
-            <source src="https://storage.cdn-luma.com/dream_machine/978beabf-1f02-4a94-b5c9-52c91e2f5081/watermarked_video01368f763a5704cec92385d7576057f47.mp4" type="video/mp4">
-        </video>
-    </div>
 
-    <div class="container">
-        <div id="point1" class="point"></div>
-        <div class="line1-segment1 line1"></div>
-        <div class="line1-segment2 line1"></div>
-
-        <div id="point2" class="point"></div>
-        <div class="line2-segment1 line2"></div>
-        <div class="line2-segment2 line2"></div>
-
-        <div id="point3" class="point"></div>
-        <div class="line3-segment1 line3"></div>
-        <div class="line3-segment2 line3"></div>
-    </div>
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+                box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+            }
+            100% {
