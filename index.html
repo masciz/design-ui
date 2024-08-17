@@ -1,85 +1,35 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Background with Lines</title>
+    <title>Square Container</title>
     <style>
-        .main-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 100vh;
-            width: 100%;
-            background-color: #000;
-        }
-
-        .side-container {
-            flex: 1;
+        body, html {
+            margin: 0;
+            padding: 0;
             height: 100%;
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .video-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100%;
-            flex: 2;
-            background-color: #000;
-            overflow: hidden;
-            position: relative;
-            z-index: 1;
+            background-color: #f0f0f0; /* Pour voir le contraste avec le conteneur */
         }
 
-        .video-background {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
-
-        .line {
-            position: absolute;
-            height: 2px; /* Épaisseur des lignes */
-            width: 80%; /* Longueur des lignes */
-            background-color: rgba(255, 255, 255, 0.8); /* Couleur des lignes */
-            z-index: 2; /* Assurez-vous que les lignes sont au-dessus de la vidéo */
-        }
-
-        /* Position des lignes selon les calculs */
-        .line1 {
-            top: 37.5%;
-            left: -21.41%;
-        }
-
-        .line2 {
-            top: 15.63%;
-            left: 3.01%;
-        }
-
-        .line3 {
-            top: 74.22%;
-            left: -21.41%;
+        .square-container {
+            width: 60vh; /* Utilisation de vh pour que la largeur soit égale à 60% de la hauteur de la fenêtre */
+            height: 60vh; /* 60% de la hauteur de la fenêtre */
+            background-color: #3498db; /* Couleur du conteneur */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px; /* Ajout d'un léger arrondi des coins */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre pour un effet 3D */
         }
     </style>
 </head>
 <body>
-    <div class="main-container">
-        <div class="side-container left-container"></div>
-        <div class="video-container">
-            <video autoplay muted loop class="video-background">
-                <source src="https://storage.cdn-luma.com/dream_machine/978beabf-1f02-4a94-b5c9-52c91e2f5081/watermarked_video01368f763a5704cec92385d7576057f47.mp4" type="video/mp4">
-                Votre navigateur ne supporte pas la vidéo HTML5.
-            </video>
-            <div class="line line1"></div>
-            <div class="line line2"></div>
-            <div class="line line3"></div>
-        </div>
-        <div class="side-container right-container"></div>
+    <div class="square-container">
+        <!-- Contenu du conteneur -->
     </div>
 </body>
 </html>
