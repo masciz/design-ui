@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Square Container</title>
+    <title>Video in Circular Container</title>
     <style>
         body, html {
             margin: 0;
@@ -16,20 +16,40 @@
         }
 
         .square-container {
-            width: 60vh; /* Utilisation de vh pour que la largeur soit égale à 60% de la hauteur de la fenêtre */
-            height: 60vh; /* 60% de la hauteur de la fenêtre */
-            background-color: #3498db; /* Couleur du conteneur */
+            width: 80vh; /* Correspond à la nouvelle taille du cercle */
+            height: 80vh; /* Correspond à la nouvelle taille du cercle */
+            background-color: rgba(52, 152, 219, 0.2); /* Couleur légère pour visualiser le conteneur */
             display: flex;
             justify-content: center;
             align-items: center;
-            border-radius: 10px; /* Ajout d'un léger arrondi des coins */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre pour un effet 3D */
+            position: relative; /* Pour positionner l'élément enfant de manière absolue */
+            border: 2px solid rgba(52, 152, 219, 0.8); /* Bordure pour visualiser le conteneur */
+        }
+
+        .video-circle {
+            width: 100%; /* La vidéo prend toute la largeur du conteneur parent */
+            height: 100%; /* La vidéo prend toute la hauteur du conteneur parent */
+            border-radius: 50%; /* Cercle parfait */
+            border: 10px solid #d3d3d3; /* Bordure épaisse de couleur gris claire */
+            overflow: hidden; /* Pour masquer les parties de la vidéo qui dépassent le cercle */
+            position: absolute; /* Pour que le cercle prenne toute la place disponible */
+        }
+
+        .video-circle video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Pour couvrir tout le cercle sans déformer la vidéo */
         }
     </style>
 </head>
 <body>
     <div class="square-container">
-        <!-- Contenu du conteneur -->
+        <div class="video-circle">
+            <video autoplay muted loop>
+                <source src="https://storage.cdn-luma.com/dream_machine/ab3b49a2-96c7-466b-b880-f27d194187a8/watermarked_video0b4317a37f6544cfaac8042b0e90b165f.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la vidéo HTML5.
+            </video>
+        </div>
     </div>
 </body>
 </html>
