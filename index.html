@@ -3,53 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video in Circular Container</title>
+    <title>Interactive Circle with Image and Text on Hover</title>
     <style>
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
+            width: 100%;
+            background-color: #000;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #f0f0f0; /* Pour voir le contraste avec le conteneur */
         }
 
-        .square-container {
-            width: 80vh; /* Correspond à la nouvelle taille du cercle */
-            height: 80vh; /* Correspond à la nouvelle taille du cercle */
-            background-color: rgba(52, 152, 219, 0.2); /* Couleur légère pour visualiser le conteneur */
+        .main-container {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            position: relative; /* Pour positionner l'élément enfant de manière absolue */
-            border: 2px solid rgba(52, 152, 219, 0.8); /* Bordure pour visualiser le conteneur */
-        }
-
-        .video-circle {
-            width: 100%; /* La vidéo prend toute la largeur du conteneur parent */
-            height: 100%; /* La vidéo prend toute la hauteur du conteneur parent */
-            border-radius: 50%; /* Cercle parfait */
-            border: 10px solid #d3d3d3; /* Bordure épaisse de couleur gris claire */
-            overflow: hidden; /* Pour masquer les parties de la vidéo qui dépassent le cercle */
-            position: absolute; /* Pour que le cercle prenne toute la place disponible */
-        }
-
-        .video-circle video {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Pour couvrir tout le cercle sans déformer la vidéo */
+        }
+
+        .side-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 5px;
+            flex: 1;
+            height: 100%;
+            background-color: rgba(52, 152, 219, 0.2);
+        }
+
+        .grid-item {
+            background-color: rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.2em;
+            position: relative;
+        }
+
+        .top-container,
+        .bottom-container {
+            width: 100%;
+            height: calc(14vh - 10px); /* Hauteur ajustée pour combler l'espace manquant */
+            background-color: rgba(52, 152, 219, 0.2); /* Couleur légère pour visualiser le conteneur */
+        }
+
+        .circle-container {
+            position: relative;
+            width: 72vh;
+            height: 72vh;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: #111;
+            color: white;
+            font-family: Arial, sans-serif;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            border: 2px solid lightgray; /* Bordures grises claires */
+        }
+
+        .circle-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        .frosted-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px); /* Effet frosted glass */
+            border-radius: 50%; /* Conserver la forme du cercle */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .frosted-overlay h2 {
+            margin: 10px;
+            color: white;
+            font-size: 2em;
+        }
+
+        /* Conteneur 3 */
+        .grid-item-3 .circle-image {
+            position: absolute;
+            width: 50%; /* Taille du cercle (quart du conteneur) */
+            height: 50%;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: #000;
+            bottom: 0; /* Placer en bas */
+            left: 0; /* Placer à gauche */
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 10; /* Au-dessus des autres éléments */
+            border: 2px solid lightgray; /* Bordures grises claires */
+        }
+
+        .circle-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Bouton d'action dans le conteneur 6 */
+        .grid-item-6 {
+            position: relative;
+        }
+
+        .grid-item-6 .circle-button {
+            width: 50px;
+            height: 50px;
+            border: 2px solid white;
+            border-radius: 50%;
+            background-color: transparent;
+            cursor: pointer;
+            position: absolute;
+            right: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .circle-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background-color: white;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s ease, height 0.3s ease;
+        }
+
+        .circle-button:hover::before {
+            width: 10px;
+            height: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="square-container">
-        <div class="video-circle">
-            <video autoplay muted loop>
-                <source src="https://storage.cdn-luma.com/dream_machine/ab3b49a2-96c7-466b-b880-f27d194187a8/watermarked_video0b4317a37f6544cfaac8042b0e90b165f.mp4" type="video/mp4">
-                Votre navigateur ne supporte pas la vidéo HTML5.
-            </video>
+    <div class="main-container">
+        <div class="side-container">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item grid-item-3">
+                <div class="circle-image" id="circleImage">
+                    <img src="https://cdn.midjourney.com/8e675fcc-a985-4488-b636-2bf89311eb47/0_1.png" alt="Eye Image">
+                </div>
+            </div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item grid-item-6">
+                <div class="circle-button" id="actionButton"></div>
+            </div>
+            <div class="grid-item">7</div>
+            <div class="grid-item">8</div>
+            <div class="grid-item">9</div>
+        </div>
+        <div>
+            <div class="top-container"></div>
+            <div class="circle-container">
+                <video id="videoElement" src="https://storage.cdn-luma.com/dream_machine/ab3b49a2-96c7-466b-b880-f27d194187a8/watermarked_video0b4317a37f6544cfaac8042b0e90b165f.mp4" autoplay muted loop></video>
+                <div class="frosted-overlay" id="frostedOverlay">
+                    <h2>Fine Tuning</h2>
+                    <h2>Prompt Engineering</h2>
+                </div>
+            </div>
+            <div class="bottom-container"></div>
+        </div>
+        <div class="side-container">
+            <div class="grid-item">10</div>
+            <div class="grid-item">11</div>
+            <div class="grid-item">12</div>
+            <div class="grid-item">13</div>
+            <div class="grid-item">14</div>
+            <div class="grid-item">15</div>
+            <div class="grid-item">16</div>
+            <div class="grid-item">17</div>
+            <div class="grid-item">18</div>
         </div>
     </div>
+
+    <script>
+        const actionButton = document.getElementById('actionButton');
+        const circleImage = document.getElementById('circleImage');
+        const frostedOverlay = document.getElementById('frostedOverlay');
+
+        actionButton.addEventListener('mouseover', () => {
+            circleImage.style.opacity = '1';
+            frostedOverlay.style.opacity = '1';
+        });
+
+        actionButton.addEventListener('mouseout', () => {
+            circleImage.style.opacity = '0';
+            frostedOverlay.style.opacity = '0';
+        });
+    </script>
 </body>
 </html>
